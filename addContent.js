@@ -17,6 +17,20 @@ itemsObj.forEach(element => {
     productBox.appendChild(imgEl);
     counterAlt++;
 
+    const cartEl = document.createElement('div');
+    cartEl.classList.add('cart');
+
+    const addToCartButton = document.createElement('button');
+    addToCartButton.classList.add('cart__button');
+    cartEl.appendChild(addToCartButton);
+
+    const cartTextEl = document.createElement('p');
+    cartTextEl.textContent = 'Add To Cart';
+    cartTextEl.classList.add('cart__text');
+    addToCartButton.appendChild(cartTextEl);
+
+    productBox.appendChild(cartEl);
+
     const productTextBox = document.createElement('div');
     productTextBox.classList.add('product__text');
     productBox.appendChild(productTextBox);
@@ -35,4 +49,8 @@ itemsObj.forEach(element => {
     productPriceEl.textContent = `${element.currency}${element.price}`;
     productPriceEl.classList.add('product__price');
     productTextBox.appendChild(productPriceEl);
+});
+
+addToCartButton.addEventListener('click', function (e) {
+    console.log();
 });
